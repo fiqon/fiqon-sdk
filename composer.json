@@ -9,11 +9,11 @@
             "Fiqon\\": "SDK/"
         },
         "files": [
+            "SDK/Transmission.class.php",
+            "SDK/Request.class.php",
             "SDK/DefaultPayload.class.php",
             "SDK/Event.class.php",
             "SDK/Immediate.class.php",
-            "SDK/Request.class.php",
-            "SDK/Transmission.class.php",
             "SDK/Webhook.class.php"
         ]
     }
