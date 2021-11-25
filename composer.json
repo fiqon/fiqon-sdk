@@ -1,4 +1,5 @@
 {
+    "naem": "fiqon/sdk",
     "require": {},
     "autoload": {
         "psr-4": {
