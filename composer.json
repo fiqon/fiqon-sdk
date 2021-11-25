@@ -1,9 +1,19 @@
 {
     "name": "fiqon/sdk",
-    "require": {},
+    "require": {
+        "php": ">=7.3 || >=8.0"
+    },
     "autoload": {
         "psr-4": {
             "Fiqon\\": "SDK/"
         }
-    }
+    },
+    "files": [
+        "SDK/DefaultPayload.class.php",
+        "SDK/Event.class.php",
+        "SDK/Immediate.class.php",
+        "SDK/Request.class.php",
+        "SDK/Transmission.class.php",
+        "SDK/Webhook.class.php"
+    ]
 }
