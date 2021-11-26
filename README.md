@@ -44,4 +44,4 @@ Webhook calls webhook for an especific transmission, it requires a identifier an
 $webhook = new Webhook();
 $reponse = $webhook->sendRequest();
 ```
-Get accepted as response, if it is everything ok and process the request on background
+Get accepted as response, if it is everything ok and process the request on background.
