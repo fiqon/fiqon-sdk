@@ -2,7 +2,7 @@
     "name": "fiqon/fiqon",
     "type": "library",
     "require": {
-        "php": "^7"
+        "php": ">=7"
     },
     "autoload": {
         "psr-4": {
