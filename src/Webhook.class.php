@@ -84,6 +84,6 @@ class Webhook extends Request {
             "token" => $this->token,
         ]);
 
-        return "{$this->transmission_identifier}/{$this->webhook_identifier}?{$query}";
+        return "{$this->transmission_identifier}/{$this->identifier}?{$query}";
     }
 }
