@@ -85,10 +85,6 @@ abstract class Request {
 
         $url = Transmission::getUrl() ?? $this->url;
 
-        echo "{$url}{$this->getPath()}\n";
-        echo "{$this->getBody()}\n";
-        var_dump($this->buildHeaders());
-
         curl_setopt_array($curl, [
             CURLOPT_URL => "{$url}{$this->getPath()}",
             CURLOPT_RETURNTRANSFER => true,

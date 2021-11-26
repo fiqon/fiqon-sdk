@@ -77,7 +77,7 @@ class DefaultPayload {
     function encode() : string {
         return json_encode(
             value: [
-                    "event" => $this->event_identifier,
+                    "event" => $this->event,
                     "token" => $this->service_token,
                     "sent_from" => $this->service_identifier,
                     "data" => $this->object,

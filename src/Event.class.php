@@ -9,6 +9,7 @@ class Event extends Request {
      * @param string $service
      * @param string $token
      * @param string $event
+     * @param array  $object
      */
     public function __construct(?string $transmission = null, ?string $service = null, ?string $token = null, ?string $event = null, ?array $object = null) {
         parent::__construct($transmission);
