@@ -1,9 +1,8 @@
 <?php
+namespace Fiqon;
 
-use Fiqon\Request;
-
-class Immediate extends Request {
-    public function getBody() : string {return "";}
-    public function reset() : void {}
-    public function getPath() : string {return "";}
+class Immediate extends Event {
+    public function getPath() : string {
+        return "event/immediate";
+    }
 }

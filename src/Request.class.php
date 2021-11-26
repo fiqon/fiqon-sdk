@@ -56,7 +56,7 @@ abstract class Request {
         $url = Transmission::getUrl() ?? $this->url;
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "{$url}{$this->getPath()}",
+            CURLOPT_URL => "{$url}/{$this->getPath()}",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 240,

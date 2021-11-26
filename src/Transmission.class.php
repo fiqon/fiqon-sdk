@@ -21,8 +21,7 @@ class Transmission {
     }
 
     public static function setUrl(string $url) {
-        $url = trim($url, "/");
-        self::$url_base = "{$url}/";
+        self::$url_base = trim($url, "/");
     }
 
     public static function setWebhookIdentifier(string $identifier) {
