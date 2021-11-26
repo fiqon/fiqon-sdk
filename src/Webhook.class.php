@@ -11,7 +11,7 @@ class Webhook extends Request {
      * @param string $token
      * @param array  $object
      */
-    function __construct(?string $transmission = null, string $identifier = "", string $token = "", array $object = null) {
+    function __construct(?string $transmission = null, string $identifier = "", string $token = "", ?array $object = null) {
         parent::__construct($transmission);
 
         $this->identifier = $identifier;
