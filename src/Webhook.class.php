@@ -3,7 +3,7 @@ namespace Fiqon;
 
 class Webhook extends Request {
     private string $identifier, $token;
-    private array $object;
+    private ?array $object;
 
     /**
      * @param string $transmission
