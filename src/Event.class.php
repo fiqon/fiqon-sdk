@@ -36,7 +36,9 @@ class Event extends Request {
     }
 
     public function reset() : void {
-        $this->resetHeader();
+        $this->payload = new DefaultPayload();
+
+        $this->transmission_identifier = Transmission::getIdentifier();
     }
 
     public function getPath() : string {

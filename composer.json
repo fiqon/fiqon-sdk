@@ -1,5 +1,5 @@
 {
-    "name": "fiqon/sdk",
+    "name": "fiqon/fiqon",
     "type": "library",
     "require": {
         "php": ">=7.3 || >=8.0"

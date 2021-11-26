@@ -18,8 +18,10 @@ abstract class Request {
      */
     function __construct(?string $transmission = null) {
         $this->transmission_identifier = $transmission ?? Transmission::getIdentifier();
+    }
 
-        $this->reset();
+    public function setTransmissionIdentifier(string $identifier) {
+        $this->transmission_identifier = $identifier;
     }
 
     public function getTransmission() : string {

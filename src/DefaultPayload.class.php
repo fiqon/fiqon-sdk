@@ -15,7 +15,7 @@ class DefaultPayload {
      * @param string $event
      * @param array  $object
      */
-    function __construct(?string $service = "", ?string $token = "", ?string $event = "", ?array $object = null) {
+    function __construct(?string $service = null, ?string $token = null, ?string $event = null, ?array $object = null) {
         $this->service_identifier = $service ?? Transmission::getService();
         $this->service_token = $token ?? Transmission::getToken();
         $this->event_identifier = $event ?? Transmission::getEvent();
