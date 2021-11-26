@@ -8,6 +8,7 @@ abstract class Request {
      */
     protected array $headers;
     protected string $url = "https://fique.online/", $transmission_identifier;
+    protected int $timeout = 240;
 
     /**
      * @param string $transmission
@@ -59,7 +60,7 @@ abstract class Request {
             CURLOPT_URL => "{$url}/{$this->getPath()}",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 240,
+            CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_POST => 1,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
