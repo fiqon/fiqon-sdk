@@ -2,7 +2,7 @@
 namespace Fiqon;
 
 class Webhook extends Request {
-    private string $identifier, $token;
+    private ?string $identifier, $token;
     private ?array $object;
 
     /**
@@ -11,11 +11,11 @@ class Webhook extends Request {
      * @param string $token
      * @param array  $object
      */
-    function __construct(?string $transmission = null, string $identifier = "", string $token = "", ?array $object = null) {
+    function __construct(?string $transmission = null, ?string $identifier = null, ?string $token = null, ?array $object = null) {
         parent::__construct($transmission);
 
-        $this->identifier = $identifier;
-        $this->token = $token;
+        $this->identifier = $identifier ?? Transmission::getWebhookIdentifier();
+        $this->token = $token ?? Transmission::getWebhookToken();
         $this->object = $object;
     }
 
@@ -74,6 +74,7 @@ class Webhook extends Request {
 
     public function reset() : void {
         $this->identifier = "";
+        $this->token = "";
     }
 
     /**
@@ -84,6 +85,6 @@ class Webhook extends Request {
             "token" => $this->token,
         ]);
 
-        return "{$this->transmission_identifier}/{$this->identifier}?{$query}";
+        return "webhook/{$this->transmission_identifier}/{$this->identifier}?{$query}";
     }
 }

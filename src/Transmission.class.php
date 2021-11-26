@@ -2,7 +2,7 @@
 namespace Fiqon;
 
 class Transmission {
-    private static string $transmission_identifier = "", $service = "", $token = "", $event = "", $url_base = "";
+    private static string $transmission_identifier = "", $service = "", $token = "", $event = "", $url_base = "", $webhook_identifier = "", $webhook_token = "";
 
     public static function setIdentifier(string $transmission_identifier) {
         self::$transmission_identifier = $transmission_identifier;
@@ -25,6 +25,14 @@ class Transmission {
         self::$url_base = "{$url}/";
     }
 
+    public static function setWebhookIdentifier(string $identifier) {
+        self::$event = $identifier;
+    }
+
+    public static function setWebhookToken(string $token) {
+        self::$url_base = $token;
+    }
+
     public static function getIdentifier() : string {
         return self::$transmission_identifier;
     }
@@ -43,5 +51,13 @@ class Transmission {
 
     public static function getUrl() : ?string {
         return self::$url_base != ""? self::$url_base : null;
+    }
+
+    public static function getWebhookIdentifier() : string {
+        return self::$webhook_identifier;
+    }
+
+    public static function getWebhookToken() : ?string {
+        return self::$webhook_token;
     }
 }

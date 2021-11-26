@@ -18,6 +18,11 @@ abstract class Request {
      */
     function __construct(?string $transmission = null) {
         $this->transmission_identifier = $transmission ?? Transmission::getIdentifier();
+
+        $this->headers = [
+            'content-type'=> 'application/json',
+            'accept' => 'application/json',
+        ];
     }
 
     /**
@@ -32,41 +37,6 @@ abstract class Request {
      */
     public function getTransmission() : string {
         return $this->transmission_identifier;
-    }
-
-    /**
-     *  @param array $headers
-     */
-    public function addHeaders(array $headers) : void {
-        if ($headers === null) {
-            return;
-        }
-
-        foreach ($headers as $key => $value) {
-            $this->headers[$key] = $value;
-        }
-    }
-
-    /**
-     * @param string $key
-     * @param string $value
-     */
-    public function addHeader(string $key, string $value) : void {
-        $this->headers[$key] = $value;
-    }
-
-    /**
-     *  @param string $key
-     */
-    public function removeHeader(string $key) : void {
-        unset($this->headers[$key]);
-    }
-
-    /**
-     * @return array
-     */
-    public function getHeaders() : array {
-        return $this->headers;
     }
 
     /**
@@ -117,16 +87,6 @@ abstract class Request {
         }
 
         return $headers;
-    }
-
-    protected function resetHeader() : void {
-        $this->headers = [];
-        $headers = [
-            'content-type'=> 'application/json',
-            'accept' => 'application/json',
-        ];
-
-        $this->addHeaders($headers);
     }
 
     public abstract function getBody() : string;
