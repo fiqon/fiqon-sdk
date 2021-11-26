@@ -4,6 +4,7 @@
     "require": {
         "php": ">=7"
     },
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Fiqon\\": "src/"
@@ -16,5 +17,6 @@
             "src/Immediate.class.php",
             "src/Webhook.class.php"
         ]
-    }
+    },
+    "description": "Fiqon defines classes to help developers to consume Fiqon's services."
 }
