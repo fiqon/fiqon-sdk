@@ -11,10 +11,11 @@ class Event extends Request {
      * @param string $event
      * @param array  $object
      */
-    public function __construct(?string $transmission = null, ?string $service = null, ?string $token = null, ?string $event = null, ?array $object = null) {
+    public function __construct(?string $transmission = null, ?string $service = null, ?string $token = null, ?string $event = null, ?array $object = null, int $timeout = 240) {
         parent::__construct($transmission);
 
         $this->payload =  new DefaultPayload($service, $token, $event, $object);
+        $this->timeout = $timeout;
     }
 
     /**

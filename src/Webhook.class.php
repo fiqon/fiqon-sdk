@@ -11,12 +11,13 @@ class Webhook extends Request {
      * @param string $token
      * @param array  $object
      */
-    function __construct(?string $transmission = null, ?string $identifier = null, ?string $token = null, ?array $object = null) {
+    function __construct(?string $transmission = null, ?string $identifier = null, ?string $token = null, ?array $object = null, int $timeout = 240) {
         parent::__construct($transmission);
 
         $this->identifier = $identifier ?? Transmission::getWebhookIdentifier();
         $this->token = $token ?? Transmission::getWebhookToken();
         $this->object = $object;
+        $this->timeout = $timeout;
     }
 
     /**
