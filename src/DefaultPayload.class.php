@@ -2,11 +2,7 @@
 namespace Fiqon;
 
 class DefaultPayload {
-    /**
-     * @var string $service_identifier, $service_token, $event_identifier
-     * @var array $object
-     */
-    private string $service_identifier, $service_token, $event_identifier;
+    private string $service_identifier, $service_token, $event;
     private ?array $object;
 
     /**
@@ -18,7 +14,7 @@ class DefaultPayload {
     function __construct(?string $service = null, ?string $token = null, ?string $event = null, ?array $object = null) {
         $this->service_identifier = $service ?? Transmission::getService();
         $this->service_token = $token ?? Transmission::getToken();
-        $this->event_identifier = $event ?? Transmission::getEvent();
+        $this->event = $event ?? Transmission::getEvent();
         $this->object = $object;
     }
 
@@ -40,7 +36,7 @@ class DefaultPayload {
      * @param string $event
      */
     function setEvent(string $event) : void {
-        $this->event_identifier = $event;
+        $this->event = $event;
     }
 
     public function setObject(array $object) : void {
@@ -64,8 +60,8 @@ class DefaultPayload {
     /**
      * @return string
      */
-    function getEventIdentifier() : string {
-        return $this->event_identifier;
+    function getEvent() : string {
+        return $this->event;
     }
 
     /**
@@ -75,6 +71,9 @@ class DefaultPayload {
         return $this->object;
     }
 
+    /**
+     * @return string
+     */
     function encode() : string {
         return json_encode(
             value: [

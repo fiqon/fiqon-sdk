@@ -20,10 +20,16 @@ abstract class Request {
         $this->transmission_identifier = $transmission ?? Transmission::getIdentifier();
     }
 
-    public function setTransmissionIdentifier(string $identifier) {
+    /**
+     * @param string $identifier
+     */
+    public function setTransmissionIdentifier(string $identifier) : void {
         $this->transmission_identifier = $identifier;
     }
 
+    /**
+     * @return string
+     */
     public function getTransmission() : string {
         return $this->transmission_identifier;
     }
