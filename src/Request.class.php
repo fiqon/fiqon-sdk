@@ -17,9 +17,10 @@ abstract class Request {
      * @param string $event = ""
      * @param array  $request_type
      */
-    function __construct(?string $transmission = null) {
+    function __construct(?string $transmission = null, int $timeout = 240) {
         $this->transmission_identifier = $transmission ?? Transmission::getIdentifier();
 
+        $this->timeout = $timeout;
         $this->headers = [
             'content-type'=> 'application/json',
             'accept' => 'application/json',
