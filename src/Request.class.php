@@ -7,7 +7,7 @@ abstract class Request {
      * @var string $transmission_identifier, $url
      */
     protected array $headers;
-    protected string $url = "https://fique.online/", $transmission_identifier;
+    protected string $url = "https://instance.fique.online/", $transmission_identifier;
     protected int $timeout = 240;
 
     /**
